@@ -1,0 +1,251 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+body {
+    height: 100%;
+    background-color: #cdcdcd;
+    font-family: "Lato";
+}
+
+.movie-card {
+    position: relative;
+    width: 50%;
+    margin: 5% 0 1vh 25%;
+    padding: 1%;
+    display: flex;
+    background-color: white;
+}
+
+.effect:before, .effect:after{
+    transform: rotate(-2deg);
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 15px;
+    width: 100%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(-2deg);
+}
+
+.effect:after{
+    transform: rotate(2deg);
+    right: 15px;
+    left: auto;
+}
+
+.movie-info {
+    width: 50vw;
+    margin: 0 0 0 1vw;
+    font-weight: 400;
+    font-size: 4vh;
+    color: #c06014;
+}
+
+.date {
+    font-size: 50%;
+    font-weight: 300;
+}
+
+.movie-poster {
+    position: relative;
+    right: 3vw;
+    width: 25%; 
+    height: 45%;
+    box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.75);
+    transform: rotate(-3deg);
+}
+
+.genre {
+    font-size: 3vh;
+    font-weight: 300;
+}
+
+.vote-avg {
+   padding: 1vh 3vw 0 0;
+   font-size: 3vh;
+   font-weight: 400;
+   width: 3.5vw;
+   color: black;
+}
+
+.star-icon {
+    position: relative;
+    bottom: 1%;
+    margin: 0 .5vw 0 0;
+    width: 2.5vw;
+    height: 4vh;
+}
+
+.overview {
+    margin: 2vh 0 0 0;
+    font-size: 2vh;
+    font-weight: 350;
+    color: black;
+}
+
+.view-more{
+    margin: 1vh 0 1vh 0;
+    font-size: 3vh;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.view-more:hover{
+    cursor: pointer;
+}
+
+.view-more::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #b6988a;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.view-more:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+#movie-container {
+    padding-top: 150px;
+}
+
+
+#wrap {
+  margin: 50px 100px;
+  height: 60px;
+  float: right;
+  padding: 0;
+  position: relative;
+}
+
+input[type="text"] {
+  height: 90px;
+  font-size: 55px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+input[type="text"]:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+input[type="text"]:focus {
+  width: 700px;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}
+input[type="submit"] {
+  height: 67px;
+  width: 63px;
+  color:red;
+  float: right;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.new-poster {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.75);
+    z-index: -1;
+}
+
+#container{
+    width: 500px;
+    height: 700px;
+    border: 2px solid red;
+    position: relative;
+}
+
+#info{
+    background:rgba(255,255,255, 0.5);
+    width: 100%;
+    height: 100%;
+    border: 5px solid green;
+    z-index: 1;
+    visibility: hidden;
+    position: relative;
+}
+
+
+.video-trailer {
+    display: none;
+}
+
+.video-trailer-iframe {
+    width: 30vw;
+    height: 30vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: none;
+}
+
+.reviews {
+    height: 20%;
+    color:#555;
+    font-size: 20px;
+    white-space: pre-line;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    text-align: justify;
+}
+
+.rev-title {
+    padding-top: 2%;
+    font-size: 30px;
+}
+
+.similar-movies {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+textarea{
+    width: 100%;
+    height: 250px !important;
+    max-height: 60vh !important;
+    border: none
+}
